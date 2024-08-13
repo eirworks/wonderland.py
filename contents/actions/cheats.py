@@ -1,28 +1,6 @@
 from wonder.game import Game
 
 
-def action_add_money(game: Game) -> Game:
-    if not game.debug:
-        return game
-
-    print("CHEAT: Add Money +1000")
-    game.player.money = game.player.money + 1000
-    return game
-
-
-def action_cheat_adult(game: Game) -> Game:
-    if not game.debug:
-        return game
-
-    if game.player.age >= 18:
-        return game
-
-    print("CHEAT: Instant adult!")
-    game.player.age = 18
-
-    return game
-
-
 def action_cheats(game: Game) -> Game:
     cheats = [
         "Add money +1000",
