@@ -1,5 +1,7 @@
 import uuid
 
+from data.stats import Stats
+
 
 class Character:
     _orientation: int
@@ -14,6 +16,7 @@ class Character:
         self.last_name = ""
         self.birth_month = 1
         self.traits = []
+        self.stats = Stats()
 
         # male = 1, female = 0
         self._gender = 1

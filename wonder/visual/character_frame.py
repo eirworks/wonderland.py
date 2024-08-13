@@ -14,4 +14,5 @@ def character_frame(character: Character, complete: bool = False):
     if complete:
         print("-" * 6)
         print("ID: {}".format(character.char_id))
+        character.stats.print_stats()
     print("-" * 10)
