@@ -1,6 +1,6 @@
 # Tasks
 
-- [ ] Help command show `help`
+- [x] Help command show `help`
 - [ ] List command `list` all commands
 - [x] character's stats
 - [ ] `stats:all` show complete character info

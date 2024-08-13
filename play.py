@@ -5,7 +5,6 @@ from contents.event_registry import execute_event_weights
 from contents.events.birth import list_birth_events
 from data.character import Character
 from wonder.game import Game
-from wonder.prompts.ask import ask_options
 from wonder.visual.character_frame import character_frame
 
 debug = "debug" in sys.argv
@@ -43,13 +42,11 @@ while True:
         print("Bye, thank you for playing")
         sys.exit(0)
     elif action == "":
-        print("Type 'help' for help command")
+        print("Type 'help' for some guidance.")
     elif action in action_registry(game.debug):
         game = action_registry(game.debug)[action](game) or game
-    elif action == "help":
-        for cmd in sorted(action_registry(game.debug).keys()):
-            print(cmd)
     elif action == "test":
-        print("Nothing to test")
+        if game.debug:
+            print("Nothing to test")
     else:
         print("Unknown command '{}', type 'help' for more info.".format(action))
