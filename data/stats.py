@@ -1,5 +1,15 @@
+from enum import Enum
 from math import floor
 from random import randrange
+
+
+class Stat(Enum):
+    CHA = "cha"
+    WIS = "wis"
+    STR = "str"
+    DEX = "dex"
+    CON = "con"
+    INT = "int"
 
 
 class Stats:
@@ -28,25 +38,25 @@ class Stats:
         self._wis = randrange(1, 18)
         self._cha = randrange(1, 18)
 
-    def modifier(self, stat: str) -> int:
+    def modifier(self, stat: Stat) -> int:
         match stat:
-            case 'str':
+            case Stat.STR:
                 return floor((self._str - 10) / 2)
-            case 'con':
+            case Stat.CON:
                 return floor((self._con - 10) / 2)
-            case 'dex':
+            case Stat.DEX:
                 return floor((self._dex - 10) / 2)
-            case 'int':
+            case Stat.INT:
                 return floor((self._int - 10) / 2)
-            case 'wis':
+            case Stat.WIS:
                 return floor((self._wis - 10) / 2)
-            case 'cha':
+            case Stat.CHA:
                 return floor((self._cha - 10) / 2)
 
     def print_stats(self):
-        print("Strength     : {} ({})".format(self._str, self.modifier('str')))
-        print("Constitution : {} ({})".format(self._con, self.modifier('con')))
-        print("Dexterity    : {} ({})".format(self._dex, self.modifier('dex')))
-        print("Intelligence : {} ({})".format(self._int, self.modifier('int')))
-        print("Wisdom       : {} ({})".format(self._wis, self.modifier('wis')))
-        print("Charisma     : {} ({})".format(self._cha, self.modifier('cha')))
+        print("Strength     : {} ({})".format(self._str, self.modifier(Stat.STR)))
+        print("Constitution : {} ({})".format(self._con, self.modifier(Stat.CON)))
+        print("Dexterity    : {} ({})".format(self._dex, self.modifier(Stat.DEX)))
+        print("Intelligence : {} ({})".format(self._int, self.modifier(Stat.INT)))
+        print("Wisdom       : {} ({})".format(self._wis, self.modifier(Stat.WIS)))
+        print("Charisma     : {} ({})".format(self._cha, self.modifier(Stat.CHA)))
