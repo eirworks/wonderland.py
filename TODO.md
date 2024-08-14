@@ -10,7 +10,7 @@
 - [x] `family` cmd list all family
 - [ ] `lovers` cmd list all lovers
 - [x] on ageing, make all character ageing too
-- [ ] purge minor characters
+- [x] purge minor characters
 - [ ] split activities by age group (baby, toddler, etc.)
 - [ ] `explore` command to explore places in the city
 - [ ] `travel` command to go to another place/city

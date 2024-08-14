@@ -1,3 +1,5 @@
+import random
+
 import click
 
 from contents.event_registry import trigger_event
@@ -35,5 +37,23 @@ def ageing(game: Game) -> Game:
     for character in game.relationships:
         if game.month == character.birth_month:
             character.age += 1
+
+    game = purge_minor_characters(game)
+
+    return game
+
+
+def purge_minor_characters(game: Game) -> Game:
+    minors = [char for char in game.relationships if char.minor]
+    to_purge = int(len(minors) * (random.randrange(0, 100) / 100))
+    characters_to_keep = minors[:]
+
+    # copy
+    for _ in range(to_purge):
+        if minors:
+            index = random.randint(0, len(minors) - 1)
+            characters_to_keep.remove(minors.pop(index))
+
+    game.relationships = [char for char in game.relationships if not char.minor] + characters_to_keep
 
     return game
