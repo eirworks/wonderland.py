@@ -1,18 +1,30 @@
 import locale
 
+import click
+
 from data.character import Character
+from data.npc import FamilyRelationship
+from data.relationship import search_by_family
+from wonder.game import Game
 from wonder.visual.time import month_name
 
 
-def character_frame(character: Character, complete: bool = False):
+def character_frame(game: Game, complete: bool = False):
     locale.setlocale(locale.LC_ALL, '')
     print("-"*10)
-    print("{} {}".format(character.first_name, character.last_name))
-    print("Age: {} Birth: {}".format(character.age, month_name(character.birth_month)))
-    print("{} {}".format(character.gender, character.orientation))
-    print("Cash: {}".format(locale.currency(character.money)))
+    print(game.player.full_name)
+    print("Age: {} Birth: {}".format(game.player.age, month_name(game.player.birth_month)))
+    print("{} {}".format(game.player.gender, game.player.orientation))
+    print("Cash: {}".format(locale.currency(game.player.money)))
     if complete:
         print("-" * 6)
-        print("ID: {}".format(character.char_id))
-        character.stats.print_stats()
+        print("ID: {}".format(game.player.char_id))
+        game.player.stats.print_stats()
+
+        father = search_by_family(game, FamilyRelationship.FATHER)
+        mother = search_by_family(game, FamilyRelationship.MOTHER)
+        print("-" * 6)
+
+        click.echo("Father: {}".format(father.name_summary() or "None"))
+        click.echo("Mother: {}".format(mother.name_summary() or "None"))
     print("-" * 10)

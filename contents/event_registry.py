@@ -11,7 +11,7 @@ def event_registry() -> list:
     ]
 
 
-def execute_event_weights(game: Game, events: list):
+def calculate_trigger_weight(game: Game, events: list):
     total = sum(weight for _, weight in events)
     print("Total weights = {}".format(total)) if game.debug else None
     r = random.uniform(0, total)
@@ -25,4 +25,4 @@ def execute_event_weights(game: Game, events: list):
 
 
 def trigger_event(game: Game) -> Game:
-    return execute_event_weights(game, event_registry())(game)
+    return calculate_trigger_weight(game, event_registry())(game)

@@ -1,7 +1,7 @@
 import sys
 
 from contents.activity_registry import action_registry
-from contents.event_registry import execute_event_weights
+from contents.event_registry import calculate_trigger_weight
 from contents.events.birth import list_birth_events
 from data.character import Character
 from wonder.game import Game
@@ -28,10 +28,10 @@ game.player = player
 game.debug = debug
 
 # Display character info
-character_frame(game.player)
+character_frame(game)
 
 # trigger birth event
-execute_event_weights(game, list_birth_events())(game)
+calculate_trigger_weight(game, list_birth_events())(game)
 
 # main loop
 while True:

@@ -1,3 +1,4 @@
+import random
 import uuid
 
 from data.stats import Stats
@@ -48,3 +49,13 @@ class Character:
     @money.setter
     def money(self, money: int | float):
         self._money = money
+
+    @property
+    def full_name(self):
+        return "{} {}".format(self.first_name, self.last_name)
+
+    def name_summary(self):
+        return "{} ({}) - {}".format(self.full_name, self.age, "Alive")
+
+    def adult(self, max_age: int = 30):
+        self.age = random.randrange(20, max_age)
