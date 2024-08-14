@@ -24,7 +24,8 @@ def character_frame(game: Game, complete: bool = False):
         father = find_by_family(game, FamilyRelationship.FATHER)
         mother = find_by_family(game, FamilyRelationship.MOTHER)
         print("-" * 6)
-
-        click.echo("Father: {}".format(father.name_summary() or "None"))
-        click.echo("Mother: {}".format(mother.name_summary() or "None"))
+        if father is not None:
+            click.echo("Father: {}".format(father.name_summary() or "None"))
+        if mother is not None:
+            click.echo("Mother: {}".format(mother.name_summary() or "None"))
     print("-" * 10)

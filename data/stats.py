@@ -54,9 +54,9 @@ class Stats:
                 return floor((self._cha - 10) / 2)
 
     def print_stats(self):
-        print("Strength     : {} ({})".format(self._str, self.modifier(Stat.STR)))
-        print("Constitution : {} ({})".format(self._con, self.modifier(Stat.CON)))
-        print("Dexterity    : {} ({})".format(self._dex, self.modifier(Stat.DEX)))
-        print("Intelligence : {} ({})".format(self._int, self.modifier(Stat.INT)))
-        print("Wisdom       : {} ({})".format(self._wis, self.modifier(Stat.WIS)))
-        print("Charisma     : {} ({})".format(self._cha, self.modifier(Stat.CHA)))
+        print("Strength     : {}    ({})".format(self._str, self.modifier(Stat.STR)))
+        print("Constitution : {}    ({})".format(self._con, self.modifier(Stat.CON)))
+        print("Dexterity    : {}    ({})".format(self._dex, self.modifier(Stat.DEX)))
+        print("Intelligence : {}    ({})".format(self._int, self.modifier(Stat.INT)))
+        print("Wisdom       : {}    ({})".format(self._wis, self.modifier(Stat.WIS)))
+        print("Charisma     : {}    ({})".format(self._cha, self.modifier(Stat.CHA)))

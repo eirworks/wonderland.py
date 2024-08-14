@@ -2,6 +2,7 @@ import random
 import uuid
 from enum import Enum
 
+from data.skill import Skill
 from data.stats import Stats
 
 
@@ -29,6 +30,7 @@ class Orientation(Enum):
 class Character:
     _orientation: Orientation
     _gender: Gender
+    skills: set
 
     data = {}
 
@@ -39,13 +41,14 @@ class Character:
         self.last_name = ""
         self.birth_month = 1
         self.traits = []
+        self.skills = set()
         self.stats = Stats()
 
         self._gender = Gender.MALE
-
-        # asexual = 0, hetero = 1, homo = 2, bi = 3
         self._orientation = Orientation.HETEROSEXUAL
 
+        self.exp = 0
+        self.base_exp = 10
         self._money = 0
 
         self.alive = True
@@ -93,3 +96,6 @@ class Character:
             return "Alive"
         else:
             return "Died at {} {}".format(self.died_at[0], self.died_at[1])
+
+    def add_skill(self, skill: Skill):
+        self.skills.add(skill)

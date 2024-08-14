@@ -11,7 +11,7 @@
 - [ ] `lovers` cmd list all lovers
 - [x] on ageing, make all character ageing too
 - [x] purge minor characters
-- [ ] split activities by age group (baby, toddler, etc.)
+- [x] add base for skill system
 - [ ] `explore` command to explore places in the city
 - [ ] `travel` command to go to another place/city
 - [ ] `save` command to save the game
