@@ -1,5 +1,7 @@
 import sys
 
+from faker import Faker
+
 from contents.activity_registry import action_registry
 from contents.event_registry import calculate_trigger_weight
 from contents.events.birth import list_birth_events
@@ -13,9 +15,12 @@ debug = "debug" in sys.argv
 print("WonderLife")
 print("V1.0 {}".format("debug" if debug else ""))
 
+fake = Faker()
 print("What is your name?")
-first_name = input("First name (John):") or "John"
-last_name = input("Last name (Doe):") or "Doe"
+first_name = fake.first_name_male()
+last_name = fake.last_name()
+first_name = input("First name ({}):".format(first_name)) or first_name
+last_name = input("Last name ({}):".format(last_name)) or last_name
 
 # Create player's character
 player = Character()
