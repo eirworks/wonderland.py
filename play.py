@@ -2,7 +2,7 @@ import sys
 
 from faker import Faker
 
-from contents.activity_registry import action_registry
+from contents.action_registry import action_registry
 from contents.event_registry import calculate_trigger_weight
 from contents.events.birth import list_birth_events
 from data.character import Character
