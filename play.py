@@ -33,6 +33,9 @@ character_frame(game)
 # trigger birth event
 calculate_trigger_weight(game, list_birth_events())(game)
 
+# get all commands
+actions = action_registry(game.debug)
+
 # main loop
 while True:
 
@@ -43,8 +46,8 @@ while True:
         sys.exit(0)
     elif action == "":
         print("Type 'help' for some guidance.")
-    elif action in action_registry(game.debug):
-        game = action_registry(game.debug)[action](game) or game
+    elif action in actions:
+        game = actions[action](game) or game
     elif action == "test":
         if game.debug:
             print("Nothing to test")

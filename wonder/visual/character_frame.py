@@ -4,7 +4,7 @@ import click
 
 from data.character import Character
 from data.npc import FamilyRelationship
-from data.relationship import search_by_family
+from data.relationship import find_by_family
 from wonder.game import Game
 from wonder.visual.time import month_name
 
@@ -21,8 +21,8 @@ def character_frame(game: Game, complete: bool = False):
         print("ID: {}".format(game.player.char_id))
         game.player.stats.print_stats()
 
-        father = search_by_family(game, FamilyRelationship.FATHER)
-        mother = search_by_family(game, FamilyRelationship.MOTHER)
+        father = find_by_family(game, FamilyRelationship.FATHER)
+        mother = find_by_family(game, FamilyRelationship.MOTHER)
         print("-" * 6)
 
         click.echo("Father: {}".format(father.name_summary() or "None"))
