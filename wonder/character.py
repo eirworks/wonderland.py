@@ -4,6 +4,7 @@ from faker import Faker
 
 from wonder.data.character import Gender, Orientation, Character
 from wonder.data.npc import NonPlayerCharacter, FamilyRelationship, Lover
+from wonder.game import Game
 
 
 def spawn_npc(gender: Gender = Gender.MALE, min_age: int = 20, max_age: int = 60) -> NonPlayerCharacter:
@@ -27,6 +28,17 @@ def spawn_npc(gender: Gender = Gender.MALE, min_age: int = 20, max_age: int = 60
     return char
 
 
+def spawn_random_npc(game: Game, amount: int = 3) -> Game:
+    if amount <= 0:
+        raise Exception("Amount is too small!")
+
+    for i in range(amount):
+        char = spawn_npc(random.choice([Gender.MALE, Gender.FEMALE]))
+        game.relationships.append(char)
+
+    return game
+
+
 def spawn_family(
         gender: Gender = Gender.MALE,
         min_age: int = 20,
@@ -38,7 +50,7 @@ def spawn_family(
 
 
 def spawn_friend(player: Character) -> NonPlayerCharacter:
-    char = spawn_npc(player.gender, player.age, player.age+3)
+    char = spawn_npc(player.gender, player.age, player.age + 3)
     char.relationship = 1
     return char
 

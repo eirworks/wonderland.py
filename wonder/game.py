@@ -48,6 +48,3 @@ class Game:
     def give_money(self, amount: float):
         self.player.money += amount
         click.secho("-> You get {} <-".format(locale.currency(amount)), bg='green')
-
-    def spawn_character(self, gender: Gender, max_age: int = 60, min_age: int = 20):
-        char = Character()

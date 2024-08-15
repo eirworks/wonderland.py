@@ -5,6 +5,7 @@ from faker import Faker
 from contents.action_registry import action_registry
 from contents.event_registry import calculate_trigger_weight
 from contents.events.birth import list_birth_events
+from wonder.character import spawn_random_npc
 from wonder.data.character import Character
 from wonder.game import Game
 from wonder.visual.character_frame import character_frame
@@ -40,6 +41,9 @@ calculate_trigger_weight(game, list_birth_events())(game)
 
 # get all commands
 actions = action_registry(game.debug)
+
+# populate the world with random characters
+game = spawn_random_npc(game, 10)
 
 # main loop
 while True:
