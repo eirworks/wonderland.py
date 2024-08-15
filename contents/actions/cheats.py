@@ -1,4 +1,4 @@
-from wonder.character import spawn_friend, spawn_lover
+from wonder.character.spawner import spawn_friend, spawn_lover
 from wonder.game import Game
 
 

@@ -5,7 +5,7 @@ from faker import Faker
 from contents.action_registry import action_registry
 from contents.event_registry import calculate_trigger_weight
 from contents.events.birth import list_birth_events
-from wonder.character import spawn_random_npc
+from wonder.character.spawner import spawn_random_npc
 from wonder.data.character import Character
 from wonder.game import Game
 from wonder.visual.character_frame import character_frame
