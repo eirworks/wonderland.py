@@ -16,13 +16,23 @@
 - [x] `cy` ageing command to age by a year
 - [x] traits system, show traits in `stats:all`
 - [x] register 3 random traits on character `init`
-- [ ] activity registry
-- [ ] `activities` command to list all activity categories
+- [x] activity registry
+- [x] `activities` command to list all activity categories
+- [ ] activity `hangout` (Friends) meeting new character
+- [ ] activity `blind_date` (Romance) meeting new lover
+- [x] Cheat "Summon a Friend"
+- [x] Cheat "Summon a Lover"
+- [ ] `characters` command: paginate result  
+- [ ] `characters` command: search by name
+- [ ] `characters` command: find by id
 - [ ] `explore` command to explore places in the city
 - [ ] `travel` command to go to another place/city
 - [ ] `save` command to save the game
 - [ ] game main menu (`load` & `new` game)
+- [ ] create character
 - [ ] `skills` command to list and use skills
+- [ ] `school` command to go to school
+- [ ] `work` command to go to work
 
 # Ideas
 

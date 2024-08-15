@@ -3,6 +3,8 @@ import sys
 import uuid
 from enum import Enum
 
+from faker import Faker
+
 from contents.traits.common_traits import random_traits
 from data.skill import Skill
 from data.stats import Stats
@@ -137,3 +139,6 @@ class Character:
 
     def set_up_traits(self, num: int = 3):
         self.traits = set(random_traits(num))
+
+
+

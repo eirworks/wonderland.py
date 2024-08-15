@@ -2,11 +2,12 @@ from enum import Enum
 
 from data.character import Character
 
+
 class FamilyRelationship(Enum):
     GRANDPARENT = "grandparent"
     PARENT = "parent"
-    FATHER = "father" #deprecated
-    MOTHER = "mother" #deprecated
+    FATHER = "father"  #deprecated
+    MOTHER = "mother"  #deprecated
     SIBLING = "sibling"
     COUSIN = "cousin"
     PARENT_SIBLING = "parent_sibling"
@@ -15,14 +16,27 @@ class FamilyRelationship(Enum):
     GRANDCHILDREN = "grandchildren"
     NONE = ""
 
+
+class Lover(Enum):
+    NONE = 0
+    LOVER = 1
+    SPOUSE = 2
+    EX_LOVER = 100
+    EX_SPOUSE = 101
+
     @staticmethod
-    def relationship_name(relationship: 'FamilyRelationship', character: Character) -> str:
-        if relationship == FamilyRelationship.PARENT and character.gender :
-            return
+    def types() -> dict:
+        return {
+            Lover.NONE: "Stranger",
+            Lover.LOVER: "Lover",
+            Lover.SPOUSE: "Spouse",
+            Lover.EX_LOVER: "Ex-Lover",
+            Lover.EX_SPOUSE: "Ex-Spouse",
+        }
+
 
 class NonPlayerCharacter(Character):
-
-    is_lover: bool
+    lover: Lover
     family: FamilyRelationship
     relationship: float
 
@@ -31,6 +45,4 @@ class NonPlayerCharacter(Character):
 
         self.relationship = 0.0
         self.family = FamilyRelationship.NONE
-        self.is_lover = False
-
-
+        self.lover = Lover.NONE

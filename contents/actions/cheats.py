@@ -1,3 +1,4 @@
+from wonder.character import spawn_friend, spawn_lover
 from wonder.game import Game
 
 
@@ -9,6 +10,8 @@ def action_cheats(game: Game) -> Game:
         "Instant adult",
         "Back to baby",
         "Go to high school",
+        "Summon a friend",
+        "Summon a lover",
     ]
 
     from wonder.prompts.ask import ask_options
@@ -27,6 +30,10 @@ def action_cheats(game: Game) -> Game:
             game.player.age = 0
         case 6:
             game.player.age = 15
+        case 7:
+            game.relationships.append(spawn_friend(game.player))
+        case 8:
+            game.relationships.append(spawn_lover(game.player))
     if cheat > 0:
         print("Cheat Activated! ({})".format(cheat))
     else:
