@@ -21,6 +21,7 @@
 - [x] Cheat "Summon a Friend"
 - [x] Cheat "Summon a Lover"
 - [x] `traits` command: see player's traits  
+- [ ] populate the world with characters on create
 - [ ] `characters` command: paginate result  
 - [ ] `characters` command: search by name
 - [ ] `characters` command: find by id

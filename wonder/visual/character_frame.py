@@ -2,9 +2,9 @@ import locale
 
 import click
 
-from data.character import Gender
-from data.npc import FamilyRelationship
-from data.relationship import find_by_family
+from wonder.data.character import Gender
+from wonder.data.npc import FamilyRelationship
+from wonder.data.relationship import find_by_family
 from wonder.game import Game
 from wonder.visual.time import month_name
 

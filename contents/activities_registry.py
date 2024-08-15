@@ -1,4 +1,4 @@
-from data.activity import ActivityCategory
+from wonder.data.activity import ActivityCategory
 
 
 def activities_registry() -> list:

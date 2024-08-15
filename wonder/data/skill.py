@@ -2,7 +2,7 @@ import uuid
 from enum import Enum
 from uuid import UUID
 
-from data.stats import Stat
+from wonder.data.stats import Stat
 
 
 class SkillTarget(Enum):

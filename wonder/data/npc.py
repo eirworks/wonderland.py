@@ -1,6 +1,6 @@
 from enum import Enum
 
-from data.character import Character
+from wonder.data.character import Character
 
 
 class FamilyRelationship(Enum):

@@ -1,9 +1,8 @@
 import locale
-from typing import Dict, Any
 
 import click
 
-from data.character import Character, Gender
+from wonder.data.character import Character, Gender
 
 
 class Game:

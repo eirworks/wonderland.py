@@ -1,5 +1,5 @@
-from data.character import Gender
-from data.npc import NonPlayerCharacter, FamilyRelationship
+from wonder.data.character import Gender
+from wonder.data.npc import NonPlayerCharacter, FamilyRelationship
 from wonder.game import Game
 
 

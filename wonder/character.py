@@ -2,8 +2,8 @@ import random
 
 from faker import Faker
 
-from data.character import Gender, Orientation, Character
-from data.npc import NonPlayerCharacter, FamilyRelationship, Lover
+from wonder.data.character import Gender, Orientation, Character
+from wonder.data.npc import NonPlayerCharacter, FamilyRelationship, Lover
 
 
 def spawn_npc(gender: Gender = Gender.MALE, min_age: int = 20, max_age: int = 60) -> NonPlayerCharacter:

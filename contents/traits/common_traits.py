@@ -1,6 +1,6 @@
 import random
 
-from data.trait import Trait
+from wonder.data.trait import Trait
 
 
 def traits_registry() -> list:

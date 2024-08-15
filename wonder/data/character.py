@@ -3,12 +3,10 @@ import sys
 import uuid
 from enum import Enum
 
-from faker import Faker
-
 from contents.traits.common_traits import random_traits
-from data.skill import Skill
-from data.stats import Stats
-from data.trait import Trait
+from wonder.data.skill import Skill
+from wonder.data.stats import Stats
+from wonder.data.trait import Trait
 
 
 class Gender(Enum):

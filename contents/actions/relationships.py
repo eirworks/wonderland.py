@@ -2,8 +2,8 @@ import locale
 
 import click
 
-from data.npc import Lover, FamilyRelationship
-from data.relationship import get_family_characters
+from wonder.data.npc import Lover, FamilyRelationship
+from wonder.data.relationship import get_family_characters
 from wonder.game import Game
 from wonder.visual.scale import star_scale
 
