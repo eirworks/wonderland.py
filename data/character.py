@@ -1,9 +1,12 @@
 import random
+import sys
 import uuid
 from enum import Enum
 
+from contents.traits.common_traits import random_traits
 from data.skill import Skill
 from data.stats import Stats
+from data.trait import Trait
 
 
 class Gender(Enum):
@@ -61,6 +64,8 @@ class Character:
         """
         self.minor = False
 
+        self.set_up_traits()
+
     @property
     def gender(self):
         return "Male" if self._gender == Gender.MALE else "Female"
@@ -99,3 +104,36 @@ class Character:
 
     def add_skill(self, skill: Skill):
         self.skills.add(skill)
+
+    def add_trait(self, trait: Trait) -> bool:
+        """
+        Add a trait, if already exists it will not add anything
+        And if reversed trait exists, it will be replaced.
+        :param trait:
+        :return:
+        """
+
+        if self.has_trait(trait.trait_id):
+            return False
+
+        if self.has_reverse_trait(trait):
+            # remove existing reversed trait
+            self.remove_trait(trait.reverse_trait_id)
+
+        self.traits.append(trait)
+
+        return True
+
+    def has_trait(self, trait_id: str) -> bool:
+        return len(list(filter(lambda trait: trait.trait_id == trait_id, self.traits))) > 0
+
+    def has_reverse_trait(self, trait: Trait) -> bool:
+        return len(list(filter(lambda t: t.trait_id == trait.reverse_trait_id, self.traits))) > 0
+
+    def remove_trait(self, trait_id: str):
+        self.traits[:] = [trait for trait in self.traits if trait.trait_id != trait_id]
+        if "debug" in sys.argv:
+            print(self.traits)
+
+    def set_up_traits(self, num: int = 3):
+        self.traits = set(random_traits(num))

@@ -14,8 +14,8 @@
 - [x] add base for skill system
 - [x] `ff` ageing command to age by x months
 - [x] `cy` ageing command to age by a year
-- [ ] traits system, show traits in `stats:all`
-- [ ] register 3 random traits on birth event
+- [x] traits system, show traits in `stats:all`
+- [x] register 3 random traits on character `init`
 - [ ] activity registry
 - [ ] `activities` command to list all activity categories
 - [ ] `explore` command to explore places in the city

@@ -28,4 +28,7 @@ def character_frame(game: Game, complete: bool = False):
             click.echo("Father: {}".format(father.name_summary() or "None"))
         if mother is not None:
             click.echo("Mother: {}".format(mother.name_summary() or "None"))
+
+        traits = ", ".join([trait.name for trait in game.player.traits])
+        click.echo("Traits: {}".format(traits))
     print("-" * 10)
