@@ -18,10 +18,9 @@
 - [x] register 3 random traits on character `init`
 - [x] activity registry
 - [x] `activities` command to list all activity categories
-- [ ] activity `hangout` (Friends) meeting new character
-- [ ] activity `blind_date` (Romance) meeting new lover
 - [x] Cheat "Summon a Friend"
 - [x] Cheat "Summon a Lover"
+- [x] `traits` command: see player's traits  
 - [ ] `characters` command: paginate result  
 - [ ] `characters` command: search by name
 - [ ] `characters` command: find by id
@@ -33,6 +32,8 @@
 - [ ] `skills` command to list and use skills
 - [ ] `school` command to go to school
 - [ ] `work` command to go to work
+- [ ] activity `hangout` (Friends) meeting new character
+- [ ] activity `blind_date` (Romance) meeting new lover
 
 # Ideas
 

@@ -1,3 +1,5 @@
+import click
+
 from wonder.game import Game
 from wonder.visual.character_frame import character_frame
 
@@ -14,4 +16,11 @@ def action_stats(game: Game) -> Game:
 
 def action_stats_all(game: Game) -> Game:
     character_frame(game, True)
+    return game
+
+
+def action_traits(game: Game) -> Game:
+    traits = ", ".join([trait.name for trait in game.player.traits])
+    click.echo("Traits: {}".format(traits))
+
     return game
