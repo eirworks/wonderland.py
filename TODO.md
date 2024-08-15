@@ -22,9 +22,10 @@
 - [x] Cheat "Summon a Lover"
 - [x] `traits` command: see player's traits  
 - [x] populate the world with characters on create
-- [ ] `characters` command: paginate result  
-- [ ] `characters` command: search by name
-- [ ] `characters` command: find by id
+- [x] `characters` command: paginate result  
+- [x] `characters` > `target` sub command: target character by ID  
+- [ ] `csearch` command: search character by name
+- [ ] `cfind` command: find character by id
 - [ ] `explore` command to explore places in the city
 - [ ] `travel` command to go to another place/city
 - [ ] `save` command to save the game

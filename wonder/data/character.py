@@ -91,7 +91,7 @@ class Character:
         return "{} {}".format(self.first_name, self.last_name)
 
     def name_summary(self):
-        return "{} ({}/{}) - {}".format(self.full_name, self.age, self.gender[0], self.alive_summary())
+        return "{}{} ({}/{})".format(self.full_name, self.dead_or_alive_symbol(), self.age, self.gender[0])
 
     def adult(self, max_age: int = 30):
         self.age = random.randrange(20, max_age)
@@ -101,6 +101,12 @@ class Character:
             return "Alive"
         else:
             return "Died at {} {}".format(self.died_at[0], self.died_at[1])
+
+    def dead_or_alive_symbol(self) -> str:
+        if self.alive:
+            return ""
+        else:
+            return "†"
 
     def add_skill(self, skill: Skill):
         self.skills.add(skill)
