@@ -15,7 +15,8 @@ class FamilyRelationship(Enum):
     GRANDCHILDREN = "grandchildren"
     NONE = ""
 
-    def relationship_name(self, relationship: 'FamilyRelationship', character: Character) -> str:
+    @staticmethod
+    def relationship_name(relationship: 'FamilyRelationship', character: Character) -> str:
         if relationship == FamilyRelationship.PARENT and character.gender :
             return
 

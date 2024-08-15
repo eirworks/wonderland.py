@@ -1,15 +1,21 @@
 import locale
+from typing import Dict, Any
 
 import click
 
 from data.character import Character
-from data.npc import NonPlayerCharacter, FamilyRelationship
 
 
 class Game:
+    perform: float
     _player: Character
 
-    data = {}
+    """
+    Data is a global variables used to store variable that affect
+    the gameplay. It could only store integer.
+    This has similar concept to RPG Maker's `Variable`.
+    """
+    data: dict[str, int] = {}
 
     def __init__(self):
         self.month = 1
@@ -21,6 +27,16 @@ class Game:
         Relationships contains NonPlayerCharacter objects
         """
         self.relationships = []
+
+        """
+        Perform used in school or work. Greater the perform
+        greater the grades and salary bonus.
+        It reset on new school year and when player changed job.
+        Initial value depends on player's stat modifier depend on the
+        type/job, eg School uses INT and job as miner uses STR.
+        It can increase with
+        """
+        self.perform = 0.0
 
     @property
     def player(self):

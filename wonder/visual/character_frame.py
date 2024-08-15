@@ -2,7 +2,7 @@ import locale
 
 import click
 
-from data.character import Character
+from data.character import Gender
 from data.npc import FamilyRelationship
 from data.relationship import find_by_family
 from wonder.game import Game
@@ -21,8 +21,8 @@ def character_frame(game: Game, complete: bool = False):
         print("ID: {}".format(game.player.char_id))
         game.player.stats.print_stats()
 
-        father = find_by_family(game, FamilyRelationship.FATHER)
-        mother = find_by_family(game, FamilyRelationship.MOTHER)
+        father = find_by_family(game, FamilyRelationship.PARENT, gender=Gender.MALE)
+        mother = find_by_family(game, FamilyRelationship.PARENT, gender=Gender.FEMALE)
         print("-" * 6)
         if father is not None:
             click.echo("Father: {}".format(father.name_summary() or "None"))

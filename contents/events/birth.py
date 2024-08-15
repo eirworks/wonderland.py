@@ -57,7 +57,7 @@ def perfect_parent(game: Game) -> Game:
     father.adult()
     father.first_name = fake.first_name_male()
     father.last_name = family_name
-    father.family = data.npc.FamilyRelationship.FATHER
+    father.family = data.npc.FamilyRelationship.PARENT
     father.money = random.randrange(10000, 100000)
     father.relationship = 1
 
@@ -68,7 +68,7 @@ def perfect_parent(game: Game) -> Game:
     mother.first_name = fake.first_name_female()
     mother.last_name = family_name
     mother.gender = Gender.FEMALE
-    mother.family = data.npc.FamilyRelationship.MOTHER
+    mother.family = data.npc.FamilyRelationship.PARENT
     mother.money = random.randrange(10000, 100000)
     mother.relationship = 1
 
