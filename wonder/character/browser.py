@@ -18,6 +18,11 @@ def character_browser(game: Game, relationship_type: str = 'all', size: int = 6)
         click.echo("No character in '{}'".format(relationship_type))
         return
 
+    if len(characters) <= size:
+        for character in characters:
+            click.echo("- {} - {}".format(character.name_summary(), character.char_id))
+        return
+
     chunk_list = list()
 
     for i in range(0, len(characters), size):
