@@ -10,12 +10,12 @@ def action_greet(game: Game) -> Game:
 
 
 def action_stats(game: Game) -> Game:
-    character_frame(game)
+    character_frame(game, game.player)
     return game
 
 
 def action_stats_all(game: Game) -> Game:
-    character_frame(game, True)
+    character_frame(game, game.player, True)
     return game
 
 

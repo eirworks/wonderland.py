@@ -2,6 +2,7 @@ import random
 import sys
 import uuid
 from enum import Enum
+from uuid import UUID
 
 from contents.traits.common_traits import random_traits
 from wonder.data.skill import Skill
@@ -31,6 +32,7 @@ class Orientation(Enum):
 
 
 class Character:
+    char_id: UUID
     _orientation: Orientation
     _gender: Gender
     skills: set

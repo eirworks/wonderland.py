@@ -4,7 +4,7 @@ from wonder.game import Game
 
 
 def find_by_id(game: Game, character_id: str) -> NonPlayerCharacter | None:
-    filtered_characters = list(filter(lambda cha: cha.char_id == character_id, game.relationships))
+    filtered_characters = list(filter(lambda cha: str(cha.char_id) == character_id, game.relationships))
 
     if len(filtered_characters) == 0:
         return None

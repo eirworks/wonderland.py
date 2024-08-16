@@ -24,8 +24,8 @@
 - [x] populate the world with characters on create
 - [x] `characters` command: paginate result  
 - [x] `characters` > `target` sub command: target character by ID  
-- [ ] `csearch` command: search character by name
-- [ ] `cfind` command: find character by id
+- [x] `search` command: search character by name
+- [x] `find` command: find character by id
 - [ ] `explore` command to explore places in the city
 - [ ] `travel` command to go to another place/city
 - [ ] `save` command to save the game

@@ -34,7 +34,7 @@ game.player = player
 game.debug = debug
 
 # Display character info
-character_frame(game)
+character_frame(game, game.player)
 
 # trigger birth event
 calculate_trigger_weight(game, list_birth_events())(game)
