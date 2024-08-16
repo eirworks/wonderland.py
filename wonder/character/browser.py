@@ -34,7 +34,7 @@ def character_browser(game: Game, relationship_type: str = 'all', size: int = 6)
         click.echo("Page {} of {}".format(current_page + 1, len(chunk_list)))
         for character in chunk_list[current_page]:
             click.echo("- {} - {}".format(character.name_summary(), character.char_id))
-        click.echo("Type `more`, `quit`, `page`")
+        click.echo("Type `more`, `c` to cancel, `page` to go to a page")
         prompt = input(">> ")
 
         if prompt == "more":
@@ -42,7 +42,7 @@ def character_browser(game: Game, relationship_type: str = 'all', size: int = 6)
                 current_page = 0
             else:
                 current_page += 1
-        elif prompt == "quit":
+        elif prompt == "cancel":
             break
         elif prompt == "page":
             page = int(input("Which page: "))

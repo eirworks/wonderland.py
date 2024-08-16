@@ -28,7 +28,7 @@ def ask_options(question: str, answers: list, chunk_size: int = 5, allow_quit: b
                 print("{}. {}".format(num, answer))
                 num += 1
         if chunked:
-            quit_msg = "or `quit`" if allow_quit else ""
+            quit_msg = "or `cancel`" if allow_quit else ""
             print("Answer with number or `more` {}".format(quit_msg))
         prompt_answer = input(">> ")
 
@@ -37,7 +37,7 @@ def ask_options(question: str, answers: list, chunk_size: int = 5, allow_quit: b
                 current_chunk = 0
             else:
                 current_chunk += 1
-        elif prompt_answer == "quit" and allow_quit:
+        elif prompt_answer == "cancel" and allow_quit:
             return 0
         else:
             try:
