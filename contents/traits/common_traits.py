@@ -41,7 +41,7 @@ def random_traits(number: int = 1) -> list:
     random.shuffle(all_traits)
     for trait in all_traits:
         combined = ids + reversed_ids
-        print(combined)
+        # print(combined)
         if trait.trait_id not in combined:
             traits.append(trait)
             ids.append(trait.trait_id)
