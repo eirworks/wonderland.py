@@ -1,5 +1,5 @@
 from wonder.data.character import Gender
-from wonder.data.npc import NonPlayerCharacter, FamilyRelationship
+from wonder.data.npc import NonPlayerCharacter, FamilyRelationship, Lover
 from wonder.game import Game
 
 
@@ -23,3 +23,7 @@ def find_by_family(game: Game, family_type: FamilyRelationship, gender: Gender =
 
 def get_family_characters(game: Game) -> list:
     return list(filter(lambda cha: cha.family != FamilyRelationship.NONE, game.relationships))
+
+
+def get_lover_characters(game: Game) -> list:
+    return list(filter(lambda cha: cha.lover != Lover.NONE, game.relationships))

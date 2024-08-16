@@ -8,7 +8,7 @@
 - [x] Create parents on birth event
 - [x] `characters` cmd list all character list
 - [x] `family` cmd list all family
-- [ ] `lovers` cmd list all lovers
+- [x] `lovers` cmd list all lovers
 - [x] on ageing, make all character ageing too
 - [x] purge minor characters
 - [x] add base for skill system
