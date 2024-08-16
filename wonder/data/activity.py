@@ -1,6 +1,6 @@
 from typing import Callable
 
-from wonder.string import to_snake_case
+from wonder.string_helpers import to_snake_case
 
 
 class ActivityCategory:

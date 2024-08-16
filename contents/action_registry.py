@@ -1,3 +1,4 @@
+from actions.relationships import action_character_search
 from contents.actions.activities import action_activity
 from contents.actions.cheats import action_cheats
 from contents.actions.character_info import action_greet, action_stats, action_stats_all, action_traits
@@ -28,6 +29,7 @@ def action_registry(debug: bool = False) -> dict:
         "lovers": action_lovers,
         "lover": action_lovers,
         "l": action_lovers,
+        "csearch": action_character_search,
     }
 
     cheats = {

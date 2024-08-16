@@ -1,21 +1,12 @@
 import click
 
-from wonder.character.query import get_family_characters, get_lover_characters
-from wonder.game import Game
 from wonder.prompts.ask import wait_prompt
 
 
-def character_browser(game: Game, relationship_type: str = 'all', size: int = 6):
-
-    if relationship_type == 'family':
-        characters = get_family_characters(game)
-    elif relationship_type == 'lover':
-        characters = get_lover_characters(game)
-    else:
-        characters = game.relationships
+def character_browser(characters: list, size: int = 6):
 
     if len(characters) == 0:
-        click.echo("No character in '{}'".format(relationship_type))
+        click.secho("No result", fg='yellow')
         return
 
     if len(characters) <= size:
@@ -42,7 +33,7 @@ def character_browser(game: Game, relationship_type: str = 'all', size: int = 6)
                 current_page = 0
             else:
                 current_page += 1
-        elif prompt == "cancel":
+        elif prompt in ["c", "cancel"]:
             break
         elif prompt == "page":
             page = int(input("Which page: "))
