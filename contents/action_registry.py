@@ -26,6 +26,8 @@ def action_registry(debug: bool = False) -> dict:
         "a": action_activity,
         "traits": action_traits,
         "lovers": action_lovers,
+        "lover": action_lovers,
+        "l": action_lovers,
     }
 
     cheats = {
