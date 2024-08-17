@@ -37,6 +37,14 @@ class Game:
         """
         self.perform = 0.0
 
+    def to_json(self) -> dict:
+        return {
+            "month": self.month,
+            "player": self._player.to_json(),
+            "relationships": [],
+            "perform": self.perform
+        }
+
     @property
     def player(self):
         return self._player

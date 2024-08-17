@@ -1,3 +1,4 @@
+from actions.game_data import action_save
 from actions.relationships import action_character_search, action_character_find
 from contents.actions.activities import action_activity
 from contents.actions.cheats import action_cheats
@@ -32,6 +33,7 @@ def action_registry(debug: bool = False) -> dict:
         "search": action_character_search,
         "csearch": action_character_search,
         "find": action_character_find,
+        "save": action_save,
     }
 
     cheats = {

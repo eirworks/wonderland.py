@@ -32,7 +32,7 @@ class Orientation(Enum):
 
 
 class Character:
-    char_id: UUID
+    char_id: str
     _orientation: Orientation
     _gender: Gender
     skills: set
@@ -41,7 +41,7 @@ class Character:
 
     def __init__(self):
         self.age = 0
-        self.char_id = uuid.uuid4()
+        self.char_id = str(uuid.uuid4())
         self.first_name = ""
         self.last_name = ""
         self.birth_month = 1
@@ -67,6 +67,15 @@ class Character:
         self.minor = False
 
         self.set_up_traits()
+
+    def to_json(self):
+        return {
+            "char_id": self.char_id,
+            "age": self.age,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "birth_month": self.birth_month,
+        }
 
     @property
     def gender(self):
@@ -145,6 +154,5 @@ class Character:
 
     def set_up_traits(self, num: int = 3):
         self.traits = set(random_traits(num))
-
 
 

@@ -28,7 +28,8 @@
 - [x] `find` command: find character by id
 - [x] game main menu (`load` & `new` game)
 - [x] create character: gender, name
-- [ ] `save` command to save the game
+- [x] `save` command to save the game
+- [ ] serialize game data
 - [ ] Continue the game / Load save
 - [ ] `school` command to go to school
 - [ ] `work` command to go to work
