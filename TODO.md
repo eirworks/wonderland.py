@@ -26,14 +26,15 @@
 - [x] `characters` > `target` sub command: target character by ID  
 - [x] `search` command: search character by name
 - [x] `find` command: find character by id
-- [ ] `explore` command to explore places in the city
-- [ ] `travel` command to go to another place/city
+- [x] game main menu (`load` & `new` game)
+- [x] create character: gender, name
 - [ ] `save` command to save the game
-- [ ] game main menu (`load` & `new` game)
-- [ ] create character
-- [ ] `skills` command to list and use skills
+- [ ] Continue the game / Load save
 - [ ] `school` command to go to school
 - [ ] `work` command to go to work
+- [ ] `explore` command to explore places in the city
+- [ ] `travel` command to go to another place/city
+- [ ] `skills` command to list and use skills
 - [ ] activity `hangout` (Friends) meeting new character
 - [ ] activity `blind_date` (Romance) meeting new lover
 

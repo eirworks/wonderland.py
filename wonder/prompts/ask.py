@@ -13,7 +13,7 @@ def ask_options(question: str, answers: list, chunk_size: int = 5, allow_quit: b
         if "debug" in sys.argv:
             print(chunk_list)
     else:
-        chunk_list = answers
+        chunk_list = [answers]
 
     current_chunk = 0
 

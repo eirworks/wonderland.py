@@ -5,6 +5,7 @@ from faker import Faker
 from contents.action_registry import action_registry
 from contents.event_registry import calculate_trigger_weight
 from contents.events.birth import list_birth_events
+from prompts.main_menu import main_menu
 from wonder.character.spawner import spawn_random_npc
 from wonder.data.character import Character
 from wonder.game import Game
@@ -12,26 +13,7 @@ from wonder.visual.character_frame import character_frame
 
 debug = "debug" in sys.argv
 
-
-print("WonderLife")
-print("V1.0 {}".format("debug" if debug else ""))
-
-fake = Faker()
-print("What is your name?")
-first_name = fake.first_name_male()
-last_name = fake.last_name()
-first_name = input("First name ({}):".format(first_name)) or first_name
-last_name = input("Last name ({}):".format(last_name)) or last_name
-
-# Create player's character
-player = Character()
-player.first_name = first_name
-player.last_name = last_name
-
-# Set up the game
-game = Game()
-game.player = player
-game.debug = debug
+game = main_menu()
 
 # Display character info
 character_frame(game, game.player)
