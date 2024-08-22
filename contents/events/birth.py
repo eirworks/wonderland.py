@@ -10,6 +10,7 @@ from faker import Faker
 
 import wonder.data.npc
 from contents.event_registry import calculate_trigger_weight
+from data.npc import FamilyRelationship
 from wonder.data.character import Gender
 from wonder.game import Game
 
@@ -57,7 +58,8 @@ def perfect_parent(game: Game) -> Game:
     father.adult()
     father.first_name = fake.first_name_male()
     father.last_name = family_name
-    father.family = wonder.data.npc.FamilyRelationship.PARENT
+    father._gender = Gender.MALE
+    father.family = FamilyRelationship.PARENT
     father.money = random.randrange(10000, 100000)
     father.relationship = 1
 
@@ -68,7 +70,7 @@ def perfect_parent(game: Game) -> Game:
     mother.first_name = fake.first_name_female()
     mother.last_name = family_name
     mother.gender = Gender.FEMALE
-    mother.family = wonder.data.npc.FamilyRelationship.PARENT
+    mother.family = FamilyRelationship.PARENT
     mother.money = random.randrange(10000, 100000)
     mother.relationship = 1
 

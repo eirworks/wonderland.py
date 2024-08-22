@@ -1,7 +1,7 @@
 import random
 import sys
 import uuid
-from enum import Enum
+from enum import Enum, IntEnum
 from uuid import UUID
 
 from contents.traits.common_traits import random_traits
@@ -10,12 +10,12 @@ from wonder.data.stats import Stats
 from wonder.data.trait import Trait
 
 
-class Gender(Enum):
+class Gender(IntEnum):
     MALE = 1
     FEMALE = 0
 
 
-class Orientation(Enum):
+class Orientation(IntEnum):
     ASEXUAL = 0
     HETEROSEXUAL = 1
     HOMOSEXUAL = 2
@@ -82,7 +82,7 @@ class Character:
         return "Male" if self._gender == Gender.MALE else "Female"
 
     @gender.setter
-    def gender(self, value):
+    def gender(self, value: Gender):
         self._gender = value
 
     @property
