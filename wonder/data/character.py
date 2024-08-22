@@ -68,13 +68,22 @@ class Character:
 
         self.set_up_traits()
 
-    def to_json(self):
+    def to_json(self) -> dict:
         return {
             "char_id": self.char_id,
             "age": self.age,
             "first_name": self.first_name,
             "last_name": self.last_name,
             "birth_month": self.birth_month,
+            "stats": self.stats.to_json(),
+            "gender": self._gender.value,
+            "orientation": self._orientation.value,
+            "alive": self.alive,
+            "minor": self.minor,
+            "died_at": [self.died_at[0], self.died_at[1]],
+            "traits": [trait.trait_id for trait in self.traits],
+            # TODO serialize skills
+            "skills": [],
         }
 
     @property

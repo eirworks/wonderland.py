@@ -60,3 +60,13 @@ class Stats:
         print("Intelligence : {}    ({})".format(self._int, self.modifier(Stat.INT)))
         print("Wisdom       : {}    ({})".format(self._wis, self.modifier(Stat.WIS)))
         print("Charisma     : {}    ({})".format(self._cha, self.modifier(Stat.CHA)))
+
+    def to_json(self):
+        return {
+            "str": self._str,
+            "con": self._con,
+            "dex": self._dex,
+            "int": self._int,
+            "wis": self._wis,
+            "cha": self._cha,
+        }

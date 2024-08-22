@@ -95,3 +95,15 @@ class NonPlayerCharacter(Character):
 
         return ""
 
+    def to_json(self) -> dict:
+        char_json = super().to_json()
+
+        char_json.update({
+            "relationship": self.relationship,
+            "family": self.family,
+            "step_family": self.step_family,
+            "in_laws": self.in_laws,
+            "lover": self.lover,
+        })
+
+        return char_json

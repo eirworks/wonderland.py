@@ -22,6 +22,8 @@ class Game:
         self._player = Character()
         self.debug = False
 
+        self.last_id = 0
+
         """
         Relationships contains NonPlayerCharacter objects
         """
@@ -41,8 +43,9 @@ class Game:
         return {
             "month": self.month,
             "player": self._player.to_json(),
-            "relationships": [],
-            "perform": self.perform
+            "relationships": [character.to_json() for character in self.relationships],
+            "perform": self.perform,
+            "last_id": self.last_id,
         }
 
     @property

@@ -30,7 +30,7 @@
 - [x] create character: gender, name
 - [x] `save` command to save the game
 - [x] lover and family label
-- [ ] serialize game data
+- [x] serialize game data
 - [ ] deserialize game data
 - [ ] Continue the game / Load save
 - [ ] `school` command to go to school
