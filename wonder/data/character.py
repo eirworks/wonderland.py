@@ -32,6 +32,7 @@ class Orientation(IntEnum):
 
 
 class Character:
+    pregnant_month: None | int
     char_id: str
     _orientation: Orientation
     _gender: Gender
@@ -58,6 +59,8 @@ class Character:
 
         self.alive = True
         self.died_at = (None, None)
+        
+        self.pregnant_month = None
 
         """
         Character marked as minor will disappear from character list
@@ -80,6 +83,7 @@ class Character:
             "orientation": self._orientation.value,
             "alive": self.alive,
             "minor": self.minor,
+            "pregnant_month": self.pregnant_month,
             "died_at": [self.died_at[0], self.died_at[1]],
             "traits": [trait.trait_id for trait in self.traits],
             # TODO serialize skills

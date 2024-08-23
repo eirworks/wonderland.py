@@ -70,3 +70,11 @@ class Stats:
             "wis": self._wis,
             "cha": self._cha,
         }
+
+    def from_json(self, value: dict):
+        self._str = value['str']
+        self._con = value['con']
+        self._dex = value['dex']
+        self._int = value['int']
+        self._wis = value['wis']
+        self._cha = value['cha']

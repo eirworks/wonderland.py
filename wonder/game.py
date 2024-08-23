@@ -1,4 +1,5 @@
 import locale
+import time
 
 import click
 
@@ -46,6 +47,13 @@ class Game:
             "relationships": [character.to_json() for character in self.relationships],
             "perform": self.perform,
             "last_id": self.last_id,
+
+            "_timestamp": int(time.time()),
+            "_summary": {
+                "name": self._player.full_name,
+                "month": self.month,
+                "age": self._player.age,
+            },
         }
 
     @property
