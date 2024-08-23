@@ -1,9 +1,9 @@
 import click
 
 from game import Game
-from persists.load_game import list_game_saves
 from persists.save_game import save_game
-from visual.time import month_name
+from prompts.main_menu import load_game_menu
+from visual.character_frame import character_frame
 
 
 def action_save(game: Game) -> Game:
@@ -13,11 +13,9 @@ def action_save(game: Game) -> Game:
 
 
 def action_load(game: Game) -> Game:
-    games = list_game_saves()
-    if len(games) == 0:
-        print("No game saves")
-    else:
-        for game in games:
-            print("- {} - {}/{}".format(game['_summary']['name'], month_name(game['_summary']['month']), game['_summary']['age']))
+    loaded_game = load_game_menu()
+    if loaded_game is not None:
+        game = loaded_game
+        character_frame(game, game.player)
 
     return game
