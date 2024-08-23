@@ -1,7 +1,7 @@
 import click
 
 from game import Game
-from persists.load_game import list_game_save_files, list_game_saves
+from persists.load_game import list_game_saves
 from persists.save_game import save_game
 from visual.time import month_name
 

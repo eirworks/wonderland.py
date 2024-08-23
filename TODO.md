@@ -31,7 +31,7 @@
 - [x] `save` command to save the game
 - [x] lover and family label
 - [x] serialize game data
-- [ ] deserialize game data
+- [x] deserialize game data
 - [ ] Continue the game / Load save
 - [ ] `school` command to go to school
 - [ ] `work` command to go to work

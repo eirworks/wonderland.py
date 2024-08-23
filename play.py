@@ -1,14 +1,10 @@
 import sys
 
-from faker import Faker
-
 from contents.action_registry import action_registry
 from contents.event_registry import calculate_trigger_weight
 from contents.events.birth import list_birth_events
 from prompts.main_menu import main_menu
 from wonder.character.spawner import spawn_random_npc
-from wonder.data.character import Character
-from wonder.game import Game
 from wonder.visual.character_frame import character_frame
 
 debug = "debug" in sys.argv
@@ -18,8 +14,9 @@ game = main_menu()
 # Display character info
 character_frame(game, game.player)
 
-# trigger birth event
-calculate_trigger_weight(game, list_birth_events())(game)
+if not game.data["loaded"]:
+    # trigger birth event
+    calculate_trigger_weight(game, list_birth_events())(game)
 
 # get all commands
 actions = action_registry(game.debug)

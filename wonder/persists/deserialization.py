@@ -7,21 +7,24 @@ from game import Game
 from traits.common_traits import traits_registry
 
 
-def deserialize_game_data(data: str) -> Game:
+def deserialize_game_data(data: str|dict) -> Game:
     """
     Rebuilt game instance from a json
     :param data:
     :return:
     """
 
-    raw_data = json.loads(data)
+    if data is str:
+        raw_data = json.loads(data)
+    else:
+        raw_data = data
 
     game = Game()
     game.month = raw_data['month']
     game.perform = raw_data['perform']
     game.last_id = raw_data['last_id']
     game.player = deserialize_character(raw_data['player'])
-    game.relationships = raw_data['relationships']
+    game.relationships = [deserialize_npc(npc) for npc in raw_data['relationships']]
 
     return game
 
