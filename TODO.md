@@ -32,7 +32,7 @@
 - [x] lover and family label
 - [x] serialize game data
 - [x] deserialize game data
-- [ ] Continue the game / Load save
+- [x] Continue the game / Load save
 - [ ] `school` command to go to school
 - [ ] `work` command to go to work
 - [ ] `explore` command to explore places in the city

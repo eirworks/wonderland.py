@@ -36,7 +36,9 @@ def deserialize_character(data: dict) -> Character:
     character.first_name = data['first_name']
     character.last_name = data['last_name']
     character.birth_month = data['birth_month']
-    character.stats = Stats().from_json(data['stats'])
+    stats = Stats()
+    stats.from_json(data['stats'])
+    character.stats = stats
     character._gender = Gender.MALE if data['gender'] == 1 else Gender.FEMALE
     character._orientation = deserialize_orientation(data['orientation'])
     character.alive = data['alive']
@@ -60,7 +62,9 @@ def deserialize_npc(data: dict) -> NonPlayerCharacter:
     character.first_name = data['first_name']
     character.last_name = data['last_name']
     character.birth_month = data['birth_month']
-    character.stats = Stats().from_json(data['stats'])
+    stats = Stats()
+    stats.from_json(data['stats'])
+    character.stats = stats
     character._gender = Gender.MALE if data['gender'] == 1 else Gender.FEMALE
     character._orientation = deserialize_orientation(data['orientation'])
     character.alive = data['alive']
